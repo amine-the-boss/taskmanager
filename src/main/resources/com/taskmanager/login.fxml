@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.taskmanager.controllers.LoginController"
+      spacing="10" alignment="CENTER"
+      styleClass="login-container">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Connexion" styleClass="login-header"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Nom d'utilisateur"
+               styleClass="login-field"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Mot de passe"
+                   styleClass="login-field"/>
+
+    <Button text="Se connecter"
+            onAction="#handleLogin"
+            styleClass="login-button"/>
+
+    <Hyperlink text="Créer un compte"
+               onAction="#handleRegister"/>
+
+    <Label fx:id="errorLabel"
+           styleClass="error-label"
+           visible="false"/>
+</VBox>

@@ -1,0 +1,19 @@
+/* src/main/resources/com/taskmanager/styles/styles.css */
+
+.root {
+    /* Styles for the root node of your application */
+}
+
+.button {
+    /* Styles for all buttons */
+}
+
+/*  More specific styles for elements with IDs or specific classes */
+#myButton {
+    /* Styles for a button with the ID "myButton" */
+}
+
+.error-label {
+    /* Styles for labels with the class "error-label" */
+    -fx-text-fill: red;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.taskmanager.controllers.RegisterController"
+      spacing="10" alignment="CENTER"
+      styleClass="register-container">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Création de compte" styleClass="register-header"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Nom d'utilisateur"
+               styleClass="register-field"/>
+
+    <TextField fx:id="emailField"
+               promptText="Email"
+               styleClass="register-field"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Mot de passe"
+                   styleClass="register-field"/>
+
+    <PasswordField fx:id="confirmPasswordField"
+                   promptText="Confirmer le mot de passe"
+                   styleClass="register-field"/>
+
+    <Button text="Créer un compte"
+            onAction="#handleRegister"
+            styleClass="register-button"/>
+
+    <Hyperlink text="Déjà un compte? Se connecter"
+               onAction="#handleBackToLogin"/>
+
+    <Label fx:id="errorLabel"
+           styleClass="error-label"
+           visible="false"/>
+</VBox>

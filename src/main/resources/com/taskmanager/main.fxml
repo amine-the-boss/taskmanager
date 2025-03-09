@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.taskmanager.controllers.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Catégories" styleClass="section-header"/>
+            <ListView fx:id="categoryList" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label fx:id="loggedInUsername" text="User: " />
+                <TextField fx:id="searchField" promptText="Rechercher une tâche..." HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="filterCombo" promptText="Filtrer par..."/>
+            </HBox>
+
+            <TableView fx:id="taskTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="titleColumn" text="Titre"/>
+                    <TableColumn fx:id="dueDateColumn" text="Échéance"/>
+                    <TableColumn fx:id="priorityColumn" text="Priorité"/>
+                    <TableColumn fx:id="categoryColumn" text="Catégorie"/>
+                    <TableColumn fx:id="statusColumn" text="Statut"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="10" styleClass="task-form">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Détails de la tâche" styleClass="section-header"/>
+
+            <Label text="Titre"/>
+            <TextField fx:id="titleField"/>
+
+            <Label text="Description"/>
+            <TextArea fx:id="descriptionArea"/>
+
+            <HBox spacing="10">
+                <Label text="Date d'échéance"/>
+                <DatePicker fx:id="dueDatePicker"/>
+                <Label text="Heure"/>
+                <Spinner fx:id="hourSpinner" prefWidth="70"/>
+                <Spinner fx:id="minuteSpinner" prefWidth="70"/>
+            </HBox>
+
+            <Label text="Priorité"/>
+            <ComboBox fx:id="priorityCombo"/>
+
+            <Label text="Catégorie"/>
+            <ComboBox fx:id="categoryCombo"/>
+
+            <Label text="Statut"/>
+            <ComboBox fx:id="statusCombo" />
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Annuler" onAction="#handleClear"/>
+                <Button text="Sauvegarder" onAction="#handleSave" styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+    </right>
+
+</BorderPane>
